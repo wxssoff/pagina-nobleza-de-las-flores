@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La nobleza de las flores 🌸</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        font-family: "Trebuchet MS", Arial, sans-serif;
+        color: #874c67;
+        text-align: center;
+        background: linear-gradient(
+            135deg,
+            #fff0f6,
+            #ffe0ed,
+            #fff5f8,
+            #fce4ec
+        );
+        min-height: 100vh;
+    }
+    header {
+        padding: 45px 20px 25px;
+    }
+    h1 {
+        color: #d85b91;
+        font-size: clamp(28px, 6vw, 45px);
+        text-shadow: 2px 3px 8px #f6b7d0;
+        margin-bottom: 12px;
+    }
+    .subtitulo {
+        font-size: 17px;
+        color: #a65e7e;
+    }
+    .decoracion {
+        font-size: 25px;
+        margin: 20px 0;
+        animation: flotar 3s ease-in-out infinite;
+    }
+    .contenedor {
+        width: min(1000px, 92%);
+        margin: auto;
+        padding-bottom: 35px;
+    }
+    .introduccion {
+        background: rgba(255, 255, 255, 0.7);
+        padding: 25px;
+        border-radius: 25px;
+        box-shadow: 0 5px 18px #e9a6c2;
+        margin-bottom: 30px;
+    }
+    .introduccion h2,
+    .tarjeta h2,
+    .mensaje h2 {
+        color: #d85b91;
+    }
+    .personajes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        margin: 30px 0;
+    }
+    .tarjeta {
+        background: rgba(255, 255, 255, 0.85);
+        width: min(100%, 300px);
+        padding: 20px;
+        border-radius: 25px;
+        box-shadow: 0 6px 18px #e8a7c2;
+        transition: transform 0.3s;
+    }
+    .tarjeta:hover {
+        transform: translateY(-7px);
+    }
+    .tarjeta img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 18px;
+        border: 3px solid #ffc6dc;
+    }
+    .tarjeta p,
+    .mensaje p {
+        line-height: 1.7;
+    }
+    .mensaje {
+        background: linear-gradient(135deg, #ffd6e7, #fff0f6);
+        padding: 25px;
+        border-radius: 25px;
+        margin: 30px 0;
+        box-shadow: 0 5px 15px #e8a7c2;
+    }
+    button {
+        background: linear-gradient(135deg, #f48fb1, #e75480);
+        color: white;
+        border: none;
+        padding: 15px 25px;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 12px #e8a7c2;
+        transition: transform 0.3s;
+    }
+    button:hover {
+        transform: scale(1.06);
+    }
+    .flores {
+        font-size: 28px;
+        margin: 25px 0;
+    }
+    footer {
+        background: rgba(255, 255, 255, 0.65);
+        padding: 25px 15px;
+        margin-top: 25px;
+        line-height: 1.8;
+        border-top: 2px solid #ffc6dc;
+    }
+    footer p {
+        margin: 6px 0;
+    }
+    .creditos {
+        color: #d85b91;
+        font-weight: bold;
+    }
+    @keyframes flotar {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+</style>
+</head>
+<body>
+<!-- MÚSICA DE FONDO -->
+<audio id="musicaFondo" autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+<script>
+    const musica = document.getElementById("musicaFondo");
+    musica.volume = 0.35;
+    function iniciarMusica() {
+        musica.play().catch(() => {});
+    }
+    window.addEventListener("load", iniciarMusica);
+    document.addEventListener("pointerdown", iniciarMusica, {
+        once: true
+    });
+    // Si se cierra la cartita, intentar reanudar la música aquí.
+    window.addEventListener("message", function(event) {
+        if (event.data === "dedicatoriaCerrada") {
+            musica.play().catch(() => {});
+        }
+    });
+</script>
+<header>
+    <h1>🌸 La nobleza de las flores 🌸</h1>
+    <p class="subtitulo">
+        Una historia de amor, ternura y flores bonitas ♡
+    </p>
+    <div class="decoracion">🎀 🌷 💗 🌷 🎀</div>
+</header>
+<main class="contenedor">
+    <section class="introduccion">
+        <h2>Bienvenidos a este pequeño jardín 💕</h2>
+        <p>
+            Un rinconcito inspirado en una historia que nos
+            recuerda que las apariencias no definen a las personas
+            y que el amor puede florecer de las formas más bonitas.
+        </p>
+        <p>
+            Aquí viven las flores, los pequeños detalles
+            y los sentimientos que hacen especial esta historia. 🌸
+        </p>
+    </section>
+    <section class="personajes">
+        <article class="tarjeta">
+            <img src="waguri.jpg" alt="Kaoruko Waguri">
+            <h2>🌷 Kaoruko Waguri</h2>
+            <p>
+                Dulce, tierna y especial.
+                Su sonrisa puede iluminar hasta el día más gris. 💗
+            </p>
+        </article>
+        <article class="tarjeta">
+            <img src="rintaro.jpg" alt="Rintaro Tsumugi">
+            <h2>🌸 Rintaro Tsumugi</h2>
+            <p>
+                Un chico de buen corazón que demuestra que
+                la verdadera belleza está en lo que llevamos dentro. ♡
+            </p>
+        </article>
+    </section>
+    <section class="mensaje">
+        <h2>💌 Un amor que florece</h2>
+        <p>
+            A veces, las historias más bonitas comienzan
+            cuando dos personas se atreven a conocerse de verdad.
+        </p>
+        <p>
+            Como las flores en primavera, los sentimientos
+            también necesitan tiempo, cariño y paciencia para crecer. 🌷
+        </p>
+        <div class="flores">🌸 💗 🌸 💗 🌸</div>
+        <button onclick="abrirDedicatoria()">
+            💌 Abrir una dedicatoria
+        </button>
+    </section>
+    <div class="flores">🎀 🌷 ♡ 🌷 🎀</div>
+</main>
+<footer>
+    <p>🌸 Un jardín para Waguri y Rintaro 🌸</p>
+    <p>
+        Creado con amor por
+        <span class="creditos">Sofía Toledo</span> ♡
+    </p>
+    <p>© 2026 · Todos los derechos reservados.</p>
+    <p>🎀 ୨୧ ♡ ୨୧ 🎀</p>
+</footer>
+<script>
+    function abrirDedicatoria() {
+        const ventana = window.open("", "_blank");
+        if (!ventana) {
+            alert(
+                "Permite las ventanas emergentes para abrir la dedicatoria 💗"
+            );
+            return;
+        }
+        // Pausar la música principal para evitar que se duplique.
+        musica.pause();
+        // Conservar la ubicación de los archivos de música e imágenes.
+        const carpeta = new URL(".", window.location.href).href;
+        const contenido = `
+            <!DOCTYPE html>
+            <html lang="es">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport"
+                      content="width=device-width, initial-scale=1.0">
+                <base href="${carpeta}">
+                <title>Una dedicatoria 💗</title>
+                <style>
+                    * {
+                        box-sizing: border-box;
+                    }
+                    body {
+                        margin: 0;
+                        min-height: 100vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 20px;
+                        text-align: center;
+                        font-family: "Trebuchet MS", Arial, sans-serif;
+                        color: #a34f75;
+                        background: linear-gradient(
+                            135deg,
+                            #fff0f6,
+                            #ffc9df,
+                            #fff5f8
+                        );
+                    }
+                    .carta {
+                        width: 100%;
+                        max-width: 520px;
+                        padding: 35px 25px;
+                        border-radius: 30px;
+                        background: rgba(255, 255, 255, 0.88);
+                        box-shadow: 0 8px 25px #e8a7c2;
+                    }
+                    h1 {
+                        color: #d85b91;
+                    }
+                    p {
+                        line-height: 1.9;
+                        font-size: 17px;
+                    }
+                    .corazones {
+                        font-size: 30px;
+                    }
+                </style>
+            </head>
+            <body>
+                <audio id="musicaCarta" autoplay loop>
+                    <source src="musica.mp3" type="audio/mpeg">
+                </audio>
+                <div class="carta">
+                    <div class="corazones">🌸 💗 🌸</div>
+                    <h1>Una pequeña dedicatoria ♡</h1>
+                    <p>
+                        Que nunca te falten motivos para sonreír,
+                        personas que te quieran de verdad
+                        y momentos que hagan florecer tu corazón.
+                    </p>
+                    <p>
+                        Porque las cosas más bonitas de la vida
+                        no siempre son perfectas, pero sí pueden
+                        ser sinceras y especiales. 🌷
+                    </p>
+                    <p>
+                        Que el amor siempre encuentre un lugar
+                        bonito donde florecer. 💌
+                    </p>
+                    <div class="corazones">🎀 ♡ 🌷 ♡ 🎀</div>
+                </div>
+                <script>
+                    const musicaCarta =
+                        document.getElementById("musicaCarta");
+                    musicaCarta.volume = 0.35;
+                    function iniciarMusicaCarta() {
+                        musicaCarta.play().catch(() => {});
+                    }
+                    window.addEventListener(
+                        "load",
+                        iniciarMusicaCarta
+                    );
+                    document.addEventListener(
+                        "pointerdown",
+                        iniciarMusicaCarta,
+                        { once: true }
+                    );
+                    window.addEventListener("beforeunload", function() {
+                        if (window.opener) {
+                            window.opener.postMessage(
+                                "dedicatoriaCerrada",
+                                "*"
+                            );
+                        }
+                    });
+                <\/script>
+            </body>
+            </html>
+        `;
+        ventana.document.open();
+        ventana.document.write(contenido);
+        ventana.document.close();
+    }
+</script>
+</body>
+</html>
